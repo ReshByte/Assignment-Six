@@ -5,14 +5,57 @@ const loadPlants=()=>{
 };
 
 
-
+const removeActive=()=>{
+  const lessonButtons = document.querySelectorAll(".lesson-btn");
+  lessonButtons.forEach(btn=>btn.classList.remove("active"))
+}
 
 const loadLevelWord=(id)=>{
 
   const url = `https://openapi.programming-hero.com/api/category/${id}`
     fetch(url)
     .then(res=>res.json())
-    .then(data=>displayLevelWord(data.plants))
+    .then(data=>{
+      removeActive();
+      const clickBtn = document.getElementById(`lesson-btn-${id}`)
+      clickBtn.classList.add("active")
+      displayLevelWord(data.plants)
+    })
+}
+
+const loadWordDetail=async(id)=>{
+  const url =`https://openapi.programming-hero.com/api/plant/${id}`;
+  const res =await fetch(url)
+  const details=await res.json()
+  console.log(details)
+  displayWordDetails(details.plants)
+}
+
+const displayWordDetails=(word)=>{
+  
+  console.log(word)
+  const detailsBox = document.getElementById("details-container");
+  
+  
+ 
+  detailsBox.innerHTML=`
+  <div class=" bg-white p-5 rounded-[8px] ">
+                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${word.name}</h2> 
+                 <img src="${word.image}" class="mb-[8px]">   
+                   <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1 w-[80px]">${word.category}</p>
+                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$${word.price}</p>
+                   <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${word.description}</p>
+                 
+                   
+    
+                    
+                 
+                
+                </div>
+  `
+  document.getElementById("word_modal").showModal();
+
+
 }
 
 
@@ -25,7 +68,7 @@ const displayLevelWord=(words)=>{
     card.innerHTML=`
      <div class=" bg-white p-5 rounded-[8px] w-full h-full">
                   <img src="${word.image}" class="mb-[8px] h-[200px] w-full">   
-                  <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${word.name}</h2>  
+                  <h2 onclick="loadWordDetail(${word.id})" class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${word.name}</h2>  
                   <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${word.description}</p>
                   <div class="flex justify-between">
                      <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">${word.category}</p>
@@ -53,7 +96,7 @@ const displayLesson=(lessons)=>{
         // console.log(lesson)
         const btnDiv =  document.createElement("div");
         btnDiv.innerHTML = `
-        <p  id="lesson-btn-${lesson.category_name}" onclick="loadLevelWord('${lesson.id}')" class="w-[250px] mb-2 inter-font font-normal text-[16px] p-1 rounded-[4px] text-[#1F2937] hover:bg-[#15803D] hover:text-white max-sm:w-[150px]"> ${lesson.category_name}</p>
+        <p  id="lesson-btn-${lesson.id}" onclick="loadLevelWord('${lesson.id}')" class="lesson-btn w-[250px] mb-2 inter-font font-normal text-[16px] p-1 rounded-[4px] text-[#1F2937] hover:bg-[#15803D] hover:text-white max-sm:w-[150px]"> ${lesson.category_name}</p>
         `
 
 
