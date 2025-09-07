@@ -69,6 +69,12 @@
 
 
     <main>
+          
+      <section id="spinner" class="flex justify-center items-center py-10 hidden">
+        <span class="loading loading-dots loading-xl"></span>
+      </section>
+
+
           <section class="w-11/12 mx-auto mt-[100px] mb-[100px]  ">
             <h1 class="text-center inter-font font-semibold text-[32px] text-[#1F2937] mb-[40px]">Choose Your Trees</h1>
 
@@ -80,7 +86,9 @@
             </div>
            </div>
 
-          <div id="card-section" class="grid grid-cols-3 gap-10 w-[830px] ml-2 max-sm:grid-cols-1 mb-[800px]">
+           
+
+          <div id="card-section" class="grid grid-cols-3 gap-10 w-[830px] ml-2 max-sm:grid-cols-1 max-sm:mb-[800px]">
              <!-- <div class="card-conatiner bg-white p-5 rounded-[8px] ">
                  <img src="./assets/about.png" class="mb-[8px]">   
                  <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
@@ -160,9 +168,17 @@
 
 
           <!-- Card add -->
-             <div class=" card-add bg-white p-5  rounded-[8px]  w-[280px] h-[450px] absolute ml-20 top-164 right-10  max-sm:mt-3465 ">
-                
+             <div id="" class=" card-add bg-white p-5  rounded-[8px]  w-[280px] h-[450px] absolute ml-20 top-163 right-10  max-sm:mt-3465 ">
+              
+              <div id="card-id">
+
+              </div>
+
+              <div>
+                  <h1 id="">Total: <span id="total-count">0</span></h1>
                 </div>
+                </div>
+                
            
 
            
