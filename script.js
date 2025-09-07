@@ -41,8 +41,8 @@ const displayWordDetails=(word)=>{
   detailsBox.innerHTML=`
   <div class=" bg-white p-5 rounded-[8px] ">
                  <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${word.name}</h2> 
-                 <img src="${word.image}" class="mb-[8px]">   
-                   <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1 w-[80px]">${word.category}</p>
+                 <img src="${word.image}" class="mb-[8px] w-full h-[300px] rounded-[8px]">   
+                   <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] text-center  py-1 w-[120px]">${word.category}</p>
                     <p class="mb-[8px] inter-font font-semibold text-[14px]">$${word.price}</p>
                    <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${word.description}</p>
                  
@@ -67,7 +67,7 @@ const displayLevelWord=(words)=>{
     const card = document.createElement("div");
     card.innerHTML=`
      <div class=" bg-white p-5 rounded-[8px] w-full h-full">
-                  <img src="${word.image}" class="mb-[8px] h-[200px] w-full">   
+                  <img src="${word.image}" class="mb-[8px] h-[200px] w-full rounded-[8px]">   
                   <h2 onclick="loadWordDetail(${word.id})" class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${word.name}</h2>  
                   <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${word.description}</p>
                   <div class="flex justify-between">
@@ -115,6 +115,46 @@ loadPlants();
 
 
 
+const showDisplay=()=>{
+  const url ="https://openapi.programming-hero.com/api/plants";
+  fetch(url)
+  .then((res)=>res.json())
+  .then((data)=>display(data.plants))
+
+}
+
+
+const display=(cards)=>{
+  // console.log(id)
+  const secCard = document.getElementById("card-section");
+   for(let card of cards){
+            console.log(card)
+        const btnDiv =  document.createElement("div");
+        btnDiv.innerHTML = `
+                  
+         <div class=" bg-white p-5 rounded-[8px] w-full h-full">
+        <img src="${card.image}" class="mb-[8px] h-[200px] w-full rounded-[8px]">   
+        <h2 onclick="loadWordDetail(${card.id})" class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${card.name}</h2>  
+                  <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${card.description}</p>
+       <div class="flex justify-between">
+                     <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">${card.category}</p>
+    
+                     <p class="mb-[8px] inter-font font-semibold text-[14px]">$ ${card.price}</p>
+                    
+                  </div>
+                  <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
+           </div>
+               `
+
+
+        // append btn to level container...
+        secCard.append(btnDiv)
+    }
+
+
+}
+
+showDisplay();
 
 
 
