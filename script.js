@@ -75,7 +75,7 @@ const displayLevelWord=(words)=>{
   words.forEach(word => {
     const card = document.createElement("div");
     card.innerHTML=`
-     <div class=" bg-white p-5 rounded-[8px] w-full h-full">
+     <div class=" bg-white p-5 rounded-[8px] w-full h-full shadow-sm">
                   <img src="${word.image}" class="mb-[8px] h-[200px] w-full rounded-[8px]">   
                   <h2 onclick="loadWordDetail(${word.id})" class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${word.name}</h2>  
                   <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${word.description}</p>
@@ -106,7 +106,7 @@ const displayLesson=(lessons)=>{
         // console.log(lesson)
         const btnDiv =  document.createElement("div");
         btnDiv.innerHTML = `
-        <p  id="lesson-btn-${lesson.id}" onclick="loadLevelWord('${lesson.id}')" class="lesson-btn w-[250px] mb-2 inter-font font-normal text-[16px] p-1 rounded-[4px] text-[#1F2937] hover:bg-[#15803D] hover:text-white max-sm:w-[150px]"> ${lesson.category_name}</p>
+        <p  id="lesson-btn-${lesson.id}" onclick="loadLevelWord('${lesson.id}')" class="lesson-btn w-full mb-2 inter-font font-normal text-[16px] p-1 rounded-[4px] text-[#1F2937] hover:bg-[#15803D] hover:text-white max-sm:w-[150px]"> ${lesson.category_name}</p>
         `
 
 
@@ -142,7 +142,7 @@ const display=(cards)=>{
         const btnDiv =  document.createElement("div");
         btnDiv.innerHTML = `
                   
-         <div class=" bg-white p-5 rounded-[8px] w-full h-full">
+         <div class=" bg-white p-5 rounded-[8px] w-full h-full shadow-md">
         <img src="${card.image}" class="mb-[8px] h-[200px] w-full rounded-[8px]">   
         <h2 onclick="loadWordDetail(${card.id})" class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">${card.name}</h2>  
                   <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">${card.description}</p>
@@ -157,7 +157,7 @@ const display=(cards)=>{
                `
 
 
-        // append btn to level container...
+       
         secCard.append(btnDiv)
     }
 
@@ -166,22 +166,6 @@ const display=(cards)=>{
 
 showDisplay();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// add to cart section 
 
 document.getElementById("card-section")
   .addEventListener("click", (e) => {
@@ -195,28 +179,30 @@ document.getElementById("card-section")
         "card-id"
       );
       cartMainSection.innerHTML += `
-      <div class="flex justify-between items-center rounded-lg p-2 bg-[#f0fdf4] mt-[10px]">
+      <div class="flex justify-between items-center rounded-lg p-2 bg-[#f0fdf4] mt-[10px] mb-3">
         <div>
           <h1 class="font-[600]">${name}</h1>
-          <p><span class="cart-item-price">${price}</span></p>
+          <p>৳<span class="cart-item-price">${price}</span></p>
         </div>
         <div>
           <button class="remove-btn cursor-pointer">❌</button>
         </div>
-      </div>`;
+      </div>
+
+     
+      `;
 
       // update total
       const cartPrice = document.getElementById("total-count").innerText;
       const total = Number(cartPrice) + Number(price);
-      document.getElementById("total-count").innerText = total;
+      document.getElementById("total-count").innerText = `${total}`;
 
       
     }
   });
 
  
-  document
-  .getElementById("card-id")
+  document.getElementById("card-id")
   .addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-btn")) {
       const itemDiv = e.target.closest("div.flex"); 

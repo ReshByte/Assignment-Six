@@ -23,15 +23,9 @@
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        <li><a>About</a></li>
+        <li><a>Contract</a></li>
+        <li><a>Get</a></li>
       </ul>
     </div>
 
@@ -51,16 +45,16 @@
 
 
 
-<section class="bg-[#CFF0DC] h-[383px] w-full">
-    <div class="flex justify-between items-center">
-        <img src="./assets/hero-leaf1.png" class="w-[400px] h-[383px]  max-sm:hidden">
+<section class="bg-[#CFF0DC] h-[383px] w-full max-sm:h-full">
+    <div class="flex justify-between items-center max-sm:flex-col">
+        <img src="./assets/hero-leaf1.png" class="w-[400px] h-[383px] ">
         <div class="text-center mt-6 p-10">
             <h1 class="inter-font font-bold text-[46px] text-[#1F2937]">Plant a Tree, Grow a Future</h1>
             <p class="inter-font font-normal text-[16px] text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future
             <br> generations.</p>
               <a class="btn bg-[#FACC15] text-[#15803D] inter-font font-medium text-[16px] border-none rounded-4xl mt-5">Get Involved</a>
         </div>
-        <img src="./assets/hero-leaf2.png"  class="w-[400px] h-[383px] max-sm:hidden">
+        <img src="./assets/hero-leaf2.png"  class="w-[400px] h-[383px] ">
        
     </div>
 </section>
@@ -78,86 +72,18 @@
           <section class="w-11/12 mx-auto mt-[100px] mb-[100px]  ">
             <h1 class="text-center inter-font font-semibold text-[32px] text-[#1F2937] mb-[40px]">Choose Your Trees</h1>
 
-         <div class="flex">
+         <div class="flex max-sm:flex-col w-11/12" >
               <div>
-             <h2 class="mb-3 text-black inter-font font-semibold text-[20px] ">All categories</h2>
-             <div id="plant-list">
+             <h2 class="mb-3 text-black inter-font font-semibold text-[20px] max-sm:text-center ">All categories</h2>
+             <div id="plant-list" class="w-[200px] max-sm: justify-center gap-3 ml-1 mt-10 ">
                
             </div>
            </div>
 
            
 
-          <div id="card-section" class="grid grid-cols-3 gap-10 w-[830px] ml-2 max-sm:grid-cols-1 max-sm:mb-[800px]">
-             <!-- <div class="card-conatiner bg-white p-5 rounded-[8px] ">
-                 <img src="./assets/about.png" class="mb-[8px]">   
-                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
-                 <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                 <div class="flex justify-between">
-                    <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">Fruit Tree</p>
-    
-                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$500</p>
-                 </div>
-                 <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
-                </div>
-             <div class="card-conatiner bg-white p-5 rounded-[8px] ">
-                 <img src="./assets/about.png" class="mb-[8px]">   
-                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
-                 <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                 <div class="flex justify-between">
-                    <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">Fruit Tree</p>
-    
-                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$500</p>
-                 </div>
-                 <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
-                </div>
-             <div class="card-conatiner bg-white p-5 rounded-[8px] ">
-                 <img src="./assets/about.png" class="mb-[8px]">   
-                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
-                 <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                 <div class="flex justify-between">
-                    <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">Fruit Tree</p>
-    
-                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$500</p>
-                 </div>
-                 <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
-                </div>
-             <div class="card-conatiner bg-white p-5 rounded-[8px] ">
-                 <img src="./assets/about.png" class="mb-[8px]">   
-                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
-                 <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                 <div class="flex justify-between">
-                    <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">Fruit Tree</p>
-    
-                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$500</p>
-                 </div>
-                 <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
-                </div>
-             <div class="card-conatiner bg-white p-5 rounded-[8px] ">
-                 <img src="./assets/about.png" class="mb-[8px]">   
-                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
-                 <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                 <div class="flex justify-between">
-                    <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">Fruit Tree</p>
-    
-                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$500</p>
-                 </div>
-                 <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
-                </div>
-             <div class="card-conatiner bg-white p-5 rounded-[8px] ">
-                 <img src="./assets/about.png" class="mb-[8px]">   
-                 <h2 class="mb-[8px] inter-font font-semibold text-[#1F2937] text-[14px]">Mango Tree</h2>  
-                 <p class="inter-font font-normal text-[12px] text-[#1F2937] mb-[8px]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                 <div class="flex justify-between">
-                    <p class="mb-[8px] geist-font font-medium text-[14px] rounded-[400px] text-[#15803D] bg-[#DCFCE7] px-2 py-1">Fruit Tree</p>
-    
-                    <p class="mb-[8px] inter-font font-semibold text-[14px]">$500</p>
-                 </div>
-                 <a class="btn bg-[#15803D] text-white inter-font font-medium text-[16px] border-none rounded-4xl w-full">Add to Cart</a>
-                </div> -->
+          <div id="card-section" class="grid grid-cols-3 gap-10 w-[890px] ml-2 max-sm:grid-cols-1 max-sm:mb-[800px] max-sm:ml-10 max-sm:w-[380px] max-sm:mt-20">
             
-             
-             
              
           
           </div>
@@ -168,15 +94,21 @@
 
 
           <!-- Card add -->
-             <div id="" class=" card-add bg-white p-5  rounded-[8px]  w-[280px] h-[450px] absolute ml-20 top-163 right-10  max-sm:mt-3465 ">
-              
+             <div id="" class=" card-add bg-white p-5  rounded-[8px]  w-[280px] h-[450px] absolute ml-20 top-163 right-10  max-sm:mt-3690 max-sm:mr-9 max-sm:w-[335px] ">
+              <h3 class="inter-font font-semibold text-[20px] text-black">Your Cart</h3>
               <div id="card-id">
 
               </div>
 
-              <div>
-                  <h1 id="">Total: <span id="total-count">0</span></h1>
+              
+              <hr>
+
+          <div class="mt-2 ">
+                  <h1 class="inter-font font-medium text-[#1F2937]" id="">Total: 
+                     <span class="inter-font font-medium text-[#1F2937] " id="total-count">0</span>
+                  </h1>
                 </div>
+      
                 </div>
                 
            
@@ -206,15 +138,15 @@
           <section class="w-11/12 mx-auto mb-[100px]">
                 <h1 class="text-center inter-font font-semibold text-[32px] text-[#1F2937] mb-[40px]">Our Impact</h1>
                 <div class="grid grid-cols-3 gap-[50px]  max-sm:grid-cols-1 ">
-                  <div class="bg-white rounded-[12px] py-[40px]">
+                  <div class="bg-white rounded-[12px] py-[40px] hover:bg-green-200">
                     <h5 class="text-center inter-font font-semibold text-[32px] text-[#15803D]">500K+</h5>
                     <p class="text-center inter-font text-[#1F2937] font-normal text-[16px]">Trees Planted</p>
                   </div>
-                  <div class="bg-white rounded-[12px] py-[40px]">
-                    <h5 class="text-center inter-font font-semibold text-[32px] text-[#15803D]">120++</h5>
+                  <div class="bg-white rounded-[12px] py-[40px] hover:bg-green-200">
+                    <h5 class="text-center inter-font font-semibold text-[32px] text-[#15803D]">120+</h5>
                     <p class="text-center inter-font text-[#1F2937] font-normal text-[16px]">Communities Involved</p>
                   </div>
-                  <div class="bg-white rounded-[12px] py-[40px]">
+                  <div class="bg-white rounded-[12px] py-[40px] hover:bg-green-200">
                     <h5 class="text-center inter-font font-semibold text-[32px] text-[#15803D]">30+</h5>
                     <p class="text-center inter-font text-[#1F2937] font-normal text-[16px]">Countries Reached</p>
                   </div>
